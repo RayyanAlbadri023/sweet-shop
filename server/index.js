@@ -14,8 +14,9 @@ app.use(express.json());
 
 // ================= MONGODB CONNECTION =================
 try {
-  const conStr =
-    "mongodb+srv://admin:admin@cluster0.sk96alb.mongodb.net/SweetDB?retryWrites=true&w=majority";
+  const conStr =    process.env.MONGO_URI;
+
+    
 
   await mongoose.connect(conStr);
   console.log("MongoDB Connected Successfully");
